@@ -1,0 +1,8 @@
+Suppose register %rbx holds value p and %rdx holds value q
+
+(1) leaq 9(%rdx), %rax => 9 + q
+(2) leaq (%rdx,%rbx), %rax => q + p
+(3) leaq (%rdx,%rbx,3), %rax => q + 3p
+(4) leaq 2(%rbx,%rbx,7), %rax => 2 + 8p
+(5) leaq 0xE(,%rdx,3), %rax => 14 + 3q
+(6) leaq 6(%rbx,%rdx,7), %rax => 6 + p + 7q

@@ -1,0 +1,29 @@
+*dp = (dest_t) *sp;
+
+(1) long -> long 
+  movq (%rdi), %rax
+  movq %rax, (%rsi)
+
+(2) char -> int
+  movsbl (%dil), %eax
+  movl %eax, (%esi)
+
+(3) char -> unsigned
+  movzbl (%dil), %eax
+  movl %eax, (%esi)
+
+(4) unsigned char -> long
+  movsbq (%dil), %rax
+  movq %rax, (%rsi)
+
+(5) int -> char
+  movb (%dil), %al
+  movb %al, (%sil)
+
+(6) unsigned -> unsigned char
+  movb (%dil), %al
+  movb %al, (%sil)
+
+(7) char -> short
+  movsbw (%dil), %ax
+  movw %ax, (%si)
