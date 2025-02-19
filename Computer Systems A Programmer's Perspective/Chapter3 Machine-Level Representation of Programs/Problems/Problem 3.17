@@ -1,0 +1,30 @@
+t = test-expr;
+  if (t)
+    goto true;
+  else-statement
+  goto done;
+true:
+  then-statement
+done:
+
+A. Rewrite the goto version of absdiff_se based on this alternate rule.
+
+long absdiff_se(long x, long y)
+{
+  long result;
+  if (x < y)
+    goto x_lt_y;
+  ge_cnt++;
+  result = x - y;
+  goto done;
+x_lt_y:
+  lt_cnt++;
+  result = y - x;
+done:
+  return result;
+}
+
+B. Can you think of any reasons for choosing one rule over the other?
+첫 번째는 거짓일 때 점프 명령어를 한 번 더 실행하고 두 번째는 참일 때 점프 명령어를 한 번 더 실행한다.
+조건이 참이 되는 경우가 많을 땐 첫 번째 방식이, 조건이 거짓이 많을 땐 두 번째 방식으로 구현하는 것이
+CPU 성능 최적화에 좀 더 유리해 보인다.

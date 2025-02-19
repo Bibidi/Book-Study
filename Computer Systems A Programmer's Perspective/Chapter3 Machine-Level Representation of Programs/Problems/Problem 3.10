@@ -1,0 +1,18 @@
+short arith3(short x, short y, short z)
+{
+  short p1 = (1) y || z;
+  short p2 = (2) (p >> 9);
+  short p3 = (3) ~p2;
+  short p4 = (4) p3 - y;
+  return p4;
+}
+
+  short arith3(short x, short y, short z)
+  x in %rdi, y in %rsi, z in %rdx
+arith3:
+  orq %rsi, %rdx
+  sarq $9, %rdx
+  notq %rdx
+  movq %rdx, %rax
+  subq %rsi, %rax
+  ret
