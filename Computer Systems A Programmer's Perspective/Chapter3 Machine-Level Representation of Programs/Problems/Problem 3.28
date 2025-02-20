@@ -1,0 +1,29 @@
+The gcc C compiler generates the following assembly code:
+
+long fun_b(unsigned long x)
+	x in %rdi
+1	fun_b:
+2	movl	$64, %edx
+3	movl	$0, %eax
+4  .L10:
+5	movq	%rdi, %rcx
+6	andl	$1, %ecx
+7	addq	%rax, %rax
+8	orq	%rcx, %rax
+9	shrq	%rdi		Shift right by 1
+10	subq	$1, %rdx
+11	jne	.L10
+12	rep; ret
+
+A: 몇 번 실행될지 컴파일 타임에 이미 정해져 있다. 그래서 initial test부분이 필요없다.
+B:
+long fun_b(unsigned long x) {
+  long val = 0;
+  long i;
+  for (i = 64; i != 0; i--) {
+    val = (val << 1) | (x & 0x1);
+    x >> 1;
+  }
+  return val;
+}
+C: x의 비트를 역순으로 만드는 함수이다.
