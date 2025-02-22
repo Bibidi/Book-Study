@@ -19,8 +19,8 @@ x in %rdi
 
 Fill in the following table to trace instruction execution through to the point 
 where the program returns back to main.
-Answer:
 
+Answer:
 Label   PC        Instruction   %rdi  %rsi  %rax  %rsp            *%rsp     Description
 M1      0x400560  callq         10    —     —     0x7fffffffe820  —         Call first(10)
 F1      0x400548  leq           10    -     -     0x7fffffffe818  0x400565  Entry of first
