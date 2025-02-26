@@ -1,0 +1,6 @@
+A:
+Unprotected code: buf: %rsp, v: %rsp + 24, canary는 없지만 들어가야 한다면 %rsp + 12
+Protected code: buf: %rsp + 16, v: %rsp + 8, canary: %rsp + 40
+
+B: v 위치를 buf보다 더 stack의 top에 가깝게 배치했다. buf 크기 이상으로 데이터를 덮어씌워도 buf
+가 덮어씌우는 영역 반대편에 있기 때문에 데이터가 오염되지 않는다.
