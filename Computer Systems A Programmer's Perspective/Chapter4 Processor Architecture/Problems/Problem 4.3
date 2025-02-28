@@ -1,0 +1,14 @@
+long sum(long *start, long count)
+start in %rdi, count in %rsi
+1   sum:
+2     xorq %rax, %rax        sum = 0
+3     andq %rsi, %rsi        Set CC
+4     jmp test               Goto test
+5   loop:
+6     mrmovq (%rdi), %r10    Get *start
+7     addq %r10, %rax        Add to sum
+8     iaddq $8, %rdi         start++
+9     iaddq $-1, %rsi        count--. Set CC
+10  test:
+11    jne loop               Stop when 0
+12    ret                    Return
