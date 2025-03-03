@@ -1,10 +1,10 @@
 1   .text
 2   .globl pushtest
 3   pushtest:
-4     movq %rsp, %rax Copy stack pointer
-5     pushq %rsp Push stack pointer
-6     popq %rdx Pop it back
-7     subq %rdx, %rax Return 0 or 4
+4     movq  %rsp, %rax  Copy stack pointer
+5     pushq %rsp        Push stack pointer
+6     popq  %rdx        Pop it back
+7     subq  %rdx, %rax  Return 0 or 4
 8     ret
 In our experiments, we find that function pushtest always returns 0. What
 does this imply about the behavior of the instruction pushq %rsp under x86-64?

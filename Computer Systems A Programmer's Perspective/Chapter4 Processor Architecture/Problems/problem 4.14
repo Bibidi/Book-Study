@@ -1,0 +1,12 @@
+Generic Specific
+Stage popq rA popq %rax
+Fetch icode :ifun ← M1[PC]
+rA :rB ← M1[PC + 1]
+valP ← PC + 2
+Decode valA ← R[%rsp]
+valB ← R[%rsp]
+Execute valE ← valB + 8
+Memory valM ← M8[valA]
+Write back R[%rsp] ← valE
+R[rA] ← valM
+PC update PC ← valP
