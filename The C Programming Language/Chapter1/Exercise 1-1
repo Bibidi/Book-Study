@@ -1,0 +1,11 @@
+Q :  Run the "hello, world" program on your system. Experiment with leaving out parts of the program, to see what error messages you get. 
+
+A : C requires an explicit return type for functions in modern standards
+
+In early versions of **C**, if a function had **no return type specified**, it was implicitly assumed to return `int`. However, in modern **C standards (C99 and later)**, this behavior is considered **deprecated** and triggers a **compiler warning**.
+
+For example, the following code:
+```C
+main() { printf("hello, world\n"); }
+```
+will produce a warning like: `warning: return type defaults to 'int' [-Wimplicit-int]`
