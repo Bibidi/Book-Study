@@ -1,0 +1,13 @@
+To test the word count program thoroughly, I would include:
+
+Input that does not end in a newline, to see if the final line is counted.
+
+Input with multiple consecutive whitespace characters (spaces, tabs, newlines) to ensure words are not overcounted.
+
+Input consisting only of whitespace, to verify that no words are counted.
+
+Input with no characters at all, to test the program’s behavior on empty input.
+
+Input with punctuation or non-whitespace separators to see if the word-detection logic is overly simplistic.
+
+These inputs are most likely to uncover logic bugs in how the program classifies word boundaries and counts lines or characters.
