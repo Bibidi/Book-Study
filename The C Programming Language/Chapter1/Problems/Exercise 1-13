@@ -2,15 +2,15 @@
 
 #define IN 1
 #define OUT 0
-#define longest_word_len 45
+#define LONGEST_WORD_LEN 45
 
 int main() {
   int c, i, cur_len, state;
-  int word_len_count[longest_word_len + 1];
+  int word_len_count[LONGEST_WORD_LEN + 1];
 
   c = cur_len = 0;
   state = OUT;
-  for (i = 0; i <= longest_word_len; ++i)
+  for (i = 0; i <= LONGEST_WORD_LEN; ++i)
     word_len_count[i] = 0;
 
   while ((c = getchar()) != EOF) {
@@ -22,7 +22,7 @@ int main() {
       }
     } else {
       ++cur_len;
-      if (cur_len > longest_word_len) {
+      if (cur_len > LONGEST_WORD_LEN) {
         printf("Input error\n");
         return 0;
       }
@@ -31,7 +31,7 @@ int main() {
     }
   }
 
-  if (state == IN && cur_len > 0 &&cur_len <= longest_word_len)
+  if (state == IN && cur_len > 0 &&cur_len <= LONGEST_WORD_LEN)
     ++word_len_count[cur_len];
 
   printf("word length histogram\n");

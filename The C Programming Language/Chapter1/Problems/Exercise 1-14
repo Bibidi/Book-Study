@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#define ALPHABET_SIZE 26
+
+int main() {
+  int c, i;
+  int character_count[26];
+
+  for (i = 0; i < ALPHABET_SIZE; ++i) 
+    character_count[i] = 0;
+  
+  while ((c = getchar()) != EOF) {
+    if (c >= 'a' && c <= 'z') {
+      ++character_count[c - 'a'];
+    } else if (c >= 'A' && c <= 'Z') {
+      ++character_count[c - 'A'];
+    }
+  }
+
+  printf("Alphabet histogram: \n");
+  for (i = 0; i < ALPHABET_SIZE; ++i) {
+    printf("%c : ", 'a' + i);
+    int j;
+    for (j = 0; j < character_count[i]; ++j)
+      putchar('=');
+    putchar('\n');
+  }
+  return 0;
+}
