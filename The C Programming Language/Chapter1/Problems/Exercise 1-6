@@ -1,9 +1,0 @@
-#include <stdio.h>
-
-int main() {
-  int c = getchar();
-  printf("Character: %d %c\n", c, c);
-  printf("getchar() != EOF: %d\n", c != EOF);
-
-  return 0;
-}

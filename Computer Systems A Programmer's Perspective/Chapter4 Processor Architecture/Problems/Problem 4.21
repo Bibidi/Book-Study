@@ -1,6 +1,0 @@
-word dstM = [
-  icode in { IMRMOVQ, IPOPQ } : rA;
-  1 : RNONE;
-];
-
-레지스터를 대상으로 하는 변수이기 때문에 icode in { IRET }는 제외한다.
