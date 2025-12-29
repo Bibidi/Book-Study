@@ -1,0 +1,5 @@
+hello.c:3:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+
+According to the modern C standard, the main of a C program must return an int to the
+operating system. However, older C standard did not enforce this rule, so programs
+could run without explicitly returning an int, although this now produces a warning.
