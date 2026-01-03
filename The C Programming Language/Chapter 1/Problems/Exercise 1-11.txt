@@ -1,0 +1,10 @@
+If I were to test the code, I would try the following cases:
+
+Case 1: "   abcd efg"
+This tests whether the program correctly handles multiple consecutive blanks.
+
+Case 2: "hello world"
+This tests whether the program correctly counts the last word when the input does not end with a blank.
+
+Case 3: "           "
+This tests whether the program correctly handles input containing only whitespace.
