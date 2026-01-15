@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+/*
+  The original version returns some occurrence of x (not necessarily the first)
+  because it stops as soon as it finds a match, whereas my version returns the
+  leftmost occurrence.
+
+  My version performs only one comparison inside the loop and does the equality
+  check once after the loop, which can reduce the number of comparisons per
+  iteration.
+*/
 int binsearch(int x, int v[], int n) {
   int low, high, mid;
 
